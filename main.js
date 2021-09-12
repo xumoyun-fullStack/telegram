@@ -96,7 +96,7 @@ let DATA = {
             shared_links: 12,
             shared_photos: 6,
             shared_voice: 4,
-            activity: "last seen recently",
+            activity: "last seen 44 minutes ago",
             selected:false,
             messages:[
                 {
@@ -124,7 +124,7 @@ let DATA = {
             shared_links: 12,
             shared_photos: 6,
             shared_voice: 4,
-            activity: "last seen recently",
+            activity: "online",
             selected:false,
             messages:[
                 {
@@ -152,7 +152,7 @@ let DATA = {
             shared_links: 12,
             shared_photos: 6,
             shared_voice: 4,
-            activity: "last seen recently",
+            activity: "last seen 1 minute ago",
             selected:false,
             messages:[
                 {
@@ -180,7 +180,7 @@ let DATA = {
             shared_links: 12,
             shared_photos: 6,
             shared_voice: 4,
-            activity: "last seen recently",
+            activity: "last seen 1 hour ago",
             selected:false,
             messages:[
                 {
@@ -271,11 +271,11 @@ let char = document.querySelectorAll(".chat")
 char.forEach(function(c, index){
     let data = DATA.users[index]
     setUser(c,index)
-    
+  
     char[index].addEventListener("click",function(){
         info.childNodes[1].childNodes[1].textContent = data.first_name
         info.childNodes[1].childNodes[3].textContent = data.activity
-        console.log(info.textContent)
+        setChatInfo(data)
         
         if(data.selected){
             
@@ -345,5 +345,57 @@ function render(i){
 
 
 
+//show chat info
+
+let details = document.querySelector(".chat_info")
+let chat_infos_bg = document.querySelector(".chat_infos_bg")
+let chat_infos = document.querySelector(".chat_infos")
+
+details.addEventListener("click",function(){
+  
+    chat_infos_bg.classList.add('active_bg')
+    chat_infos.classList.add('active_chat')
+  
+})
+
+chat_infos_bg.addEventListener("click",function(){
+    chat_infos_bg.classList.remove("active_bg")
+    chat_infos.classList.remove("active_chat")
+   
+})
 
 
+
+function setChatInfo(data){
+    document.querySelector(".chat_info_img").setAttribute("src", `${data.profil_photo}`)
+    document.querySelector(".profil_text").childNodes[1].innerHTML = `${data.first_name}`  
+    document.querySelector(".profil_text").childNodes[3].innerHTML = `${data.activity}`
+
+    document.querySelector(".shared_photo").childNodes[5].innerHTML = `${data.shared_photos}`
+    document.querySelector(".shared_links").childNodes[5].innerHTML = `${data.shared_links}`
+    document.querySelector(".shared_voices").childNodes[5].innerHTML = `${data.shared_voice}`
+
+}
+
+let btn_2 = document.querySelector(".on_off")
+let btn_3 = document.querySelector(".on_off_2")
+
+btn_2.onclick = function(){
+    btn_2.classList.toggle('active_btn')
+}
+
+btn_3.onclick = function(){
+    btn_3.classList.toggle('active_btn_2')
+}
+
+document.querySelector(".fa-bars").addEventListener("click", function(){
+    document.querySelector(".humburger").classList.add("active")
+    document.querySelector(".humb_bg").classList.add("active_hum")
+
+})
+
+document.querySelector(".humb_bg").addEventListener("click", function(){
+    document.querySelector(".humb_bg").classList.remove("active_hum")
+    document.querySelector(".humburger").classList.remove("active")
+    console.log("hum")
+})

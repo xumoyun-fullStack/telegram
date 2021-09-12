@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    
 }
 
 body{
@@ -157,7 +158,6 @@ body{
 .from_me{
     background-color: #2b5278;
     align-self: flex-end;
-
 }
 
 button{
@@ -172,11 +172,10 @@ button{
     position: relative;
     right: 0;
     background-color: #17212b;    
-    height: 50px;
+    height: 40px;
     cursor: pointer;
     color: #fff;
-    padding:10px;
-  
+    padding:10px;  
 }
 
 .text_info{
@@ -187,4 +186,267 @@ button{
 .last_activity{
     color:#567e76;
     margin-top: 10px;
+}
+
+.chat_infos_bg{
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+    width:100%;
+    height:100%;
+    display: none;
+}
+
+.active_bg{
+    display: block;
+}
+
+
+.chat_infos{
+    position: absolute; 
+    width:350px;
+    padding: 15px;
+    height:500px;
+    left: 50%;
+    top: 50%;
+    z-index: 16;
+    transform: translate(-50%, -50%);
+    background: #17212b;
+    color: #fff;
+    display: none;
+}
+.active_chat{
+    display: block;
+}
+.icons_info{
+    margin-left: 168px;
+    color: #6c7883;
+}
+.icons_info i {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.chat_info_img{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+
+
+.profil_img_name{
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.profil_text{
+    margin-left: 20px;
+}
+.profil_text div{
+    margin-bottom: 10px;
+}
+
+.line{
+    position: inherit;
+    height: 10px;
+    width: 100%;
+    background-color: #232e3c;
+    margin-left: -15px;
+    margin-top: 30px;
+}
+
+.notifications{
+    margin-top: 70px;
+    margin-left: 10px;
+    display: flex;
+}
+
+.on_off{
+    width:40px;
+    cursor:pointer;
+    height: 20px;
+    background-color: #6c7883;
+    right: -160px;
+    position: relative;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.on_off .indicator{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #17212b;
+    border:2px solid #6c7883;
+    left:0;
+    top:-2px;
+    border-radius: 50%;
+    transition: 0.5s; 
+}
+
+.on_off.active_btn {
+    background-color: #5288c1;
+}
+.on_off.active_btn .indicator{
+    left: 20px;
+    border: 2px solid #5288c1;
+}
+
+.shared_photo{
+    margin-top: 80px;
+    margin-left: 10px;
+}
+
+.shared_links, .shared_voices{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.shared_text{
+    margin-left: 20px;
+}
+
+.shared_num{
+    position: absolute;
+    right: 30px;
+}
+
+.humburger{
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    background-color: #17212b;
+    z-index: 2;
+    left: -250px;
+    transition: 0.5s;
+}
+
+.active{
+    left: 0px;
+}
+
+.humb_bg{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.active_hum{
+    display: block;
+}
+
+.head_h{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background-color: #276899;
+}
+
+.img_my{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.flex_d{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+.my_name{
+    position: relative;
+    color:#fff;
+    width:150px;
+    font-size: 12px;
+}
+.saved{
+    width:30px;
+    height: 30px;  
+    align-items: center;
+    background-color: #185680;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+}
+.fa-bookmark{
+    margin-top: 8px;
+}
+.bar_item{
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 20px;
+    color: #6e6e64;
+    line-height: 40px;
+}
+
+.bar_text{
+    padding-top:20px;
+    margin-left: 20px;
+    margin-right: 80px;
+    color:#fff;
+    cursor: pointer;
+}
+.on_off_2{
+    width:35px;
+    height: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: #6c7883;
+    top:-30px;
+    left:160px;
+    transition: 0.5s;
+}
+
+.on_off_2 .indicator_2{
+    position: absolute;
+    width:17px;
+    height: 17px;
+    left:0;
+    background-color: #17212b;
+    border:1px solid #6c7883;
+    border-radius: 50%;
+    margin-top: -1px;
+    transition: 0.5s;
+}
+
+.on_off_2.active_btn_2 {
+    background-color: #5288c1;
+}
+.on_off_2.active_btn_2 .indicator_2{
+    left: 18px;
+    border: 1px solid #5288c1;
+}
+
+.bar_item_1{
+    color:#6e7169;
+    position: absolute;
+    bottom:10px;
+    font-size: 13px;
+    width:60%;
+    margin-left: 30px;
+}
+
+
+
+.d_icon{
+    position: relative;
+    left:800px;
+    top:-35px;
+    color: #6e7169;
+    letter-spacing: 7px;
+}
+.d_icon i:hover{
+    color: #fff;
 }
